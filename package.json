@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "pricedown by Awesome ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awesomeojumu/pricedown.git"
+  },
+  "keywords": [
+    "pricedown",
+    "vuejs",
+    "nodejs",
+    "nuxtjs",
+    "stripe",
+    "mongodb"
+  ],
+  "author": "Awesome Ojumu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awesomeojumu/pricedown/issues"
+  },
+  "homepage": "https://github.com/awesomeojumu/pricedown#readme",
+  "dependencies": {
+    "aws-sdk": "^2.899.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
+}
