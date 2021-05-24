@@ -1,8 +1,8 @@
-const router = require("express").Router();
-const Product = require("../models/product");
-const upload = require("../middleware/upload-photo");
+const router = require('express').Router();
+const Product = require('../models/product');
+const upload = require('../middleware/upload-photo');
 
-router.post("/products", upload.single("photo"), async (req, res) => {
+router.post('/products', upload.single('photo'), async (req, res) => {
   try {
     console.log(upload);
     let product = new Product();
@@ -21,7 +21,7 @@ router.post("/products", upload.single("photo"), async (req, res) => {
 
     res.json({
       status: true,
-      message: "Success",
+      message: 'Success',
     });
   } catch (error) {
     console.log(error);
@@ -32,10 +32,9 @@ router.post("/products", upload.single("photo"), async (req, res) => {
   }
 });
 
-router.get("/products", async (req, res) => {
+router.get('/products', async (req, res) => {
   try {
-    let products = await Product.find();
-
+    let products = await Product.find().populate('owner category').exec();
     res.json({
       status: true,
       products: products,
@@ -48,7 +47,7 @@ router.get("/products", async (req, res) => {
   }
 });
 
-router.get("/product/:id", async (req, res) => {
+router.get('/product/:id', async (req, res) => {
   try {
     let product = await Product.findOne({ _id: req.params.id });
 
@@ -64,7 +63,7 @@ router.get("/product/:id", async (req, res) => {
   }
 });
 
-router.put("/product/:id", async (req, res) => {
+router.put('/product/:id', async (req, res) => {
   try {
     let product = await Product.findOneAndUpdate(
       { _id: req.params.id },
@@ -96,7 +95,7 @@ router.put("/product/:id", async (req, res) => {
   }
 });
 
-router.delete("/product/:id", async (req, res) => {
+router.delete('/product/:id', async (req, res) => {
   try {
     let product = await Product.findOneAndDelete({ _id: req.params.id });
 
